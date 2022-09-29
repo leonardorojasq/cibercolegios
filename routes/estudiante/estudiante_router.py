@@ -9,7 +9,7 @@ estudiante = APIRouter(
 
 
 @estudiante.get('/estudiante/{user}')
-def recursos_estudiante(user:str , grado: int):
+async def recursos_estudiante(user:str , grado: int):
     with conection.cursor() as db:
         if user or grado:
             sql = f"""

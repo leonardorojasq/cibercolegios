@@ -12,7 +12,7 @@ prefix="/api/ingreso",
 
 
 @coordinador.get('/coordinador/{user}')
-def rector(user):
+async def rector(user:str):
     with conection.cursor() as db:
         if user:
             sql = "SELECT * FROM usuarios WHERE rol=3 AND user = '{0}'".format(user) 

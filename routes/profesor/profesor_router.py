@@ -12,7 +12,7 @@ profesor = APIRouter(
 
 
 @profesor.get('/profesor/{user}/{idArea}')
-def profesorado(user,idArea):
+async def profesorado(user:str,idArea:str):
 
     with conection.cursor() as db:
         if user and idArea:
